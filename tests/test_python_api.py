@@ -7,12 +7,15 @@ from PythonDemo_API import app
 
 class TestApp(unittest.TestCase):
     def test_home_route(self):
+        print("test returning all Home data from sproc ")
         tester = app.test_client(self)
         response = tester.get('/gethomes')
-        #print(response.data)
+        print(response.data)
         self.assertEqual(response.status_code, 200)
 
+    
     def test_home_route(self):
+        print("test only returning Home Address data from sproc ")
         tester = app.test_client(self)
         response = tester.get('/gethomeAddresses')
         print(response.data)
